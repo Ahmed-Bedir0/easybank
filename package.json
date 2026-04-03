@@ -1,0 +1,29 @@
+{
+  "name": "easybank",
+  "author": "Ahmed Bedir",
+  "private": true,
+  "scripts": {
+    "start": "webpack serve --open",
+    "build": "NODE_ENV=production webpack",
+    "deploy": "NODE_ENV=production webpack && gh-pages -d build"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.2",
+    "autoprefixer": "^10.4.27",
+    "babel-loader": "^10.1.1",
+    "css-loader": "^7.1.4",
+    "css-minimizer-webpack-plugin": "^8.0.0",
+    "gh-pages": "^6.3.0",
+    "html-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.6.6",
+    "mini-css-extract-plugin": "^2.10.2",
+    "postcss-loader": "^8.2.1",
+    "postcss-preset-env": "^11.2.0",
+    "sass": "^1.99.0",
+    "sass-loader": "^16.0.7",
+    "webpack": "^5.105.4",
+    "webpack-cli": "^7.0.2",
+    "webpack-dev-server": "^5.2.3"
+  }
+}
