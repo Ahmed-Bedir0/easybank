@@ -1,0 +1,77 @@
+.call-to-action{
+    background : linear-gradient(to right, $lime-green, $bright-cyan);
+    text-align: center;
+    padding: .5rem 1rem;
+    width: 7rem;
+    border-radius: 99999px;
+    color: $white;
+    display: block;
+    &:hover{
+        background : linear-gradient(to right, $lime-green, $lime-green);
+        color: $white;
+    }
+}
+
+.container{
+    max-width: 1440px;
+    margin: 0 auto;
+    padding : 0 1rem;
+}
+
+.title{
+    color: $dark-blue;
+    font-weight: 700;
+}
+
+.title-one{
+    font-size: 2rem;
+}
+.title-two{
+    font-size: 1.8rem;
+}
+
+.title-three{
+    font-size: 1.2rem;
+}
+
+/* ---------------- animation ----------------- */
+
+.will-be-revealed{
+    transition: 1s ease;
+}
+
+.will-be-revealed-revealed{
+    opacity: 1!important;
+    transform: translate(0, 0)!important;
+}
+
+/* ---------------- cards container ----------------- */
+.cards{
+    display: grid;
+    gap: 2rem;
+    @media screen and (min-width : 600px){
+  
+        &{
+            grid-template-columns: repeat(2, 1fr);
+        }      
+      
+    }
+
+    @media screen and (min-width : 1024px){
+   
+        &{
+            grid-template-columns: repeat(4, 1fr);
+            .will-be-revealed{
+                opacity: 0;
+                transform: translateY(3rem);
+            }
+            @for $i from 2 through 4{
+                .card:nth-child(#{$i}){
+                    transition-delay: #{$i*0.1}s;
+                }
+            }
+           
+        }
+        
+    }  
+}
